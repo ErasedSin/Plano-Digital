@@ -106,3 +106,34 @@ footer {
     width: 100%;
     bottom: 0;
 }
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>oPlano Digital</title>
+    <style>
+        /* Estilo para o cabeçalho */
+        header {
+            position: relative; /* Define o cabeçalho como um elemento relativo */
+        }
+
+        /* Estiliza a logo */
+        .logo {
+            position: absolute; /* Permite que a logo fique fixa em um local específico */
+            top: -15px; /* Distância do topo */
+            left: 10px; /* Distância da esquerda */
+            width: 100px; /* Largura da logo */
+            height: auto; /* Mantém a proporção */
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="LOGO-COM-NOME.png" alt="Logo do oPlano Digital" class="logo"> <!-- Aqui está a logo como uma imagem -->
+        <!-- Outros elementos do cabeçalho -->
+    </header>
+    <!-- Conteúdo da página -->
+</body>
+</html>
+
