@@ -1,107 +1,108 @@
-
+/* Reset básico para remover espaçamentos padrões */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Fundo preto e texto branco */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #f9f9f9;
-    color: #333;
+    background-color: #121212; /* Preto suave */
+    color: #f5f5f5; /* Texto claro */
+    line-height: 1.6;
 }
 
+/* Estilo do cabeçalho */
 header {
-    background-color: #222;
+    background-color: #1f1f1f; /* Fundo mais escuro para o cabeçalho */
     padding: 20px;
-    color: white;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
 }
 
-header .logo {
-    font-size: 1.8em;
+.logo {
+    font-size: 24px;
     font-weight: 600;
+    color: #00aaff; /* Azul para destacar o logotipo */
 }
 
 nav ul {
     list-style: none;
-    display: flex;
+    padding: 0;
 }
 
 nav ul li {
-    margin-left: 20px;
+    display: inline-block;
+    margin: 0 15px;
 }
 
 nav ul li a {
-    color: white;
+    color: #f5f5f5;
     text-decoration: none;
-    font-weight: 500;
-    transition: color 0.3s ease;
+    font-weight: 400;
+    transition: color 0.3s;
 }
 
 nav ul li a:hover {
-    color: #f39c12;
+    color: #00aaff;
 }
 
+/* Estilo das seções */
 section {
-    padding: 60px 20px;
-    margin: 20px 0;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
+    padding: 50px 20px;
+    text-align: center;
 }
 
-section:hover {
-    transform: translateY(-5px);
-}
-
-h2 {
+/* Títulos das seções */
+h1, h2 {
+    color: #00aaff;
     margin-bottom: 20px;
-    font-size: 1.5em;
-    font-weight: 600;
-    color: #333;
 }
 
-form label {
+/* Formulário */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+label {
     display: block;
-    margin: 15px 0 5px;
+    margin-bottom: 5px;
+    text-align: left;
 }
 
-form input, form textarea {
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
     width: 100%;
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    font-family: 'Montserrat', sans-serif;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #1f1f1f;
+    border: 1px solid #00aaff;
+    color: #f5f5f5;
 }
 
 button {
-    background-color: #f39c12;
-    color: white;
-    padding: 12px 24px;
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: #fff;
     border: none;
-    border-radius: 6px;
-    font-family: 'Montserrat', sans-serif;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #e67e22;
+    background-color: #0088cc;
 }
 
+/* Estilo do rodapé */
 footer {
+    background-color: #1f1f1f;
+    color: #f5f5f5;
     text-align: center;
-    padding: 30px;
-    background-color: #222;
-    color: white;
-    margin-top: 30px;
-}
-
-footer p {
-    font-size: 0.9em;
+    padding: 20px;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
 }
