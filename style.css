@@ -138,4 +138,17 @@ footer {
     <!-- Conteúdo da página -->
 </body>
 </html>
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00aaff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.contact-button:hover {
+    background-color: #0088cc;
+}
 
