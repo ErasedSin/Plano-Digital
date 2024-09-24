@@ -6,17 +6,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $cores = $_POST['cores'];
     $ideias = $_POST['ideias'];
 
-    $to = "teu-email@exemplo.com"; // Substitua pelo email onde deseja receber os dados
-    $subject = "Novo contato do oPlano Digital";
-    $message = "Nome: $nome\nEmail: $email\nTelefone: $telefone\nCores preferidas: $cores\nIdeias: $ideias";
+    $to = "lonelysin12@gmail.com"; // Seu e-mail
+    $subject = "Novo formulário de contato";
+    $message = "Nome: $nome\nE-mail: $email\nTelefone: $telefone\nCores preferidas: $cores\nIdeias: $ideias";
     $headers = "From: $email";
 
     if (mail($to, $subject, $message, $headers)) {
-        echo "E-mail enviado com sucesso!";
+        echo "Mensagem enviada com sucesso!";
     } else {
-        echo "Falha ao enviar e-mail.";
+        echo "Falha ao enviar a mensagem.";
     }
-} else {
-    echo "Método inválido.";
 }
 ?>
