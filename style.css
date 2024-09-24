@@ -101,11 +101,13 @@ footer {
     background-color: #1f1f1f;
     color: #f5f5f5;
     text-align: center;
-    padding: 20px;
+    padding: 10px; /* Reduzindo o padding de 20px para 10px */
+    font-size: 12px; /* Diminuindo o tamanho da fonte */
     position: fixed;
     width: 100%;
     bottom: 0;
 }
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
