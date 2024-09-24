@@ -4,48 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chat - oPlano Digital</title>
-    <style>
-        /* Estilo para o corpo da página */
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            background-color: #121212; /* Fundo escuro */
-            color: #f5f5f5; /* Texto claro */
-            height: 100vh; /* Altura total da tela */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Alinhado ao topo */
-            align-items: center;
-        }
-
-        /* Estilo para o cabeçalho */
-        header {
-            background-color: #1f1f1f; /* Fundo do cabeçalho */
-            padding: 20px;
-            width: 100%; /* Largura total */
-            text-align: center;
-        }
-
-        /* Estilo da logo */
-        .logo {
-            width: 100px; /* Ajuste a largura da logo conforme necessário */
-            height: auto; /* Mantém a proporção */
-        }
-
-        /* Estilo do chat */
-        #chat-container {
-            flex: 1; /* Permite que o container do chat ocupe o restante do espaço */
-            width: 100%; /* Largura total */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            position: relative; /* Para posicionamento do chat */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <img src="LOGO-COM-NOME.png" alt="Logo do oPlano Digital" class="logo"> 
+        <img src="LOGO-COM-NOME.png" alt="Logo do oPlano Digital" class="logo">
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
@@ -58,22 +21,30 @@
         </nav>
     </header>
 
-    <div id="chat-container">
-        <!-- O Tawk.to será inserido aqui -->
-    </div>
+    <section id="chat">
+        <h2>Chat com a equipe</h2>
+        <div id="chat-container">
+            <!-- Aqui será inserido o Tawk.to -->
+        </div>
+    </section>
 
-    <!-- Tawk.to Script -->
+    <footer>
+        <p>© 2024 oPlano Digital. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="app.js"></script>
+    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-    })();
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
     </script>
-    <!-- Fim do Script do Tawk.to -->
+    <!--End of Tawk.to Script-->
 </body>
 </html>
