@@ -18,7 +18,7 @@ header {
     background-color: #1f1f1f; /* Fundo mais escuro para o cabeçalho */
     padding: 20px;
     text-align: center;
-    position: relative; /* Define o cabeçalho como um elemento relativo */
+    position: relative;
 }
 
 /* Estiliza a logo */
@@ -30,13 +30,12 @@ header {
     height: auto;
 }
 
-/* Menu Hamburguer */
+/* Estiliza o botão de menu (as barrinhas) */
 .menu-toggle {
     position: absolute;
     top: 20px;
     right: 20px;
     cursor: pointer;
-    display: none; /* Esconde em telas grandes */
 }
 
 .menu-toggle .bar {
@@ -69,47 +68,6 @@ nav ul li a:hover {
     color: #00aaff;
 }
 
-/* Estilo para dispositivos móveis */
-@media (max-width: 768px) {
-    .menu-toggle {
-        display: block; /* Mostra o hamburguer em telas menores */
-    }
-    
-    nav ul {
-        display: none; /* Esconde o menu por padrão */
-        position: absolute;
-        top: 60px;
-        right: 20px;
-        background-color: #1f1f1f;
-        width: 200px;
-        text-align: right;
-        padding: 20px;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 10px 0;
-    }
-
-    /* Quando o menu estiver ativo (aberto), o menu aparece */
-    nav.active ul {
-        display: block;
-    }
-
-    /* Efeito de transição para o ícone hamburguer */
-    .menu-toggle.active .bar:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-
-    .menu-toggle.active .bar:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle.active .bar:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-}
-
 /* Estilo das seções */
 section {
     padding: 50px 20px;
@@ -122,41 +80,13 @@ h1, h2 {
     margin-bottom: 20px;
 }
 
-/* Formulário */
-form {
-    max-width: 500px;
-    margin: 0 auto;
+/* Estilo para o menu em telas pequenas (pode ser escondido ou exibido clicando no hamburguer) */
+nav {
+    display: none; /* Começa escondido */
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
-    text-align: left;
-}
-
-input[type="text"],
-input[type="email"],
-input[type="tel"],
-textarea {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    background-color: #1f1f1f;
-    border: 1px solid #00aaff;
-    color: #f5f5f5;
-}
-
-button {
-    padding: 10px 20px;
-    background-color: #00aaff;
-    color: #fff;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #0088cc;
+.menu-toggle.active + nav {
+    display: block; /* Exibe o menu quando o botão de hambúrguer é clicado */
 }
 
 /* Estilo do rodapé */
@@ -170,19 +100,3 @@ footer {
     width: 100%;
     bottom: 0;
 }
-
-/* Estilo do botão de contato */
-.contact-button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #00aaff;
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-
-.contact-button:hover {
-    background-color: #0088cc;
-}
-
