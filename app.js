@@ -1,4 +1,9 @@
-document.getElementById('menu-toggle').addEventListener('click', function () {
-    this.classList.toggle('active');
-    document.getElementById('nav-menu').classList.toggle('active');
-});
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu');
+
+    menuToggle.addEventListener('click', function() {
+        menuToggle.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+</script>
