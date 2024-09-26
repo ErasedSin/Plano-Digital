@@ -1,3 +1,6 @@
+const menuToggle = document.getElementById('menu-toggle');
+const navMenu = document.getElementById('nav-menu');
 
-// Placeholder for any future interactivity
-console.log('Site oPlano Digital carregado!');
+menuToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('show');
+});
