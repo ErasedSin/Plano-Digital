@@ -23,11 +23,11 @@ header {
 
 /* Estiliza a logo */
 .logo {
-    position: absolute; /* Permite que a logo fique fixa em um local específico */
-    top: -15px; /* Distância do topo */
-    left: 10px; /* Distância da esquerda */
-    width: 100px; /* Largura da logo */
-    height: auto; /* Mantém a proporção */
+    position: absolute;
+    top: -15px;
+    left: 10px;
+    width: 100px;
+    height: auto;
 }
 
 /* Menu Hamburguer */
@@ -36,11 +36,11 @@ header {
     top: 20px;
     right: 20px;
     cursor: pointer;
-    display: none; /* Escondido por padrão em telas maiores */
+    display: none; /* Esconde em telas grandes */
 }
 
 .menu-toggle .bar {
-    width: 25px;
+    width: 30px;
     height: 3px;
     background-color: #f5f5f5;
     margin: 5px 0;
@@ -72,11 +72,11 @@ nav ul li a:hover {
 /* Estilo para dispositivos móveis */
 @media (max-width: 768px) {
     .menu-toggle {
-        display: block; /* Mostra o ícone hamburguer em telas menores */
+        display: block; /* Mostra o hamburguer em telas menores */
     }
     
     nav ul {
-        display: none; /* Esconde o menu de navegação por padrão */
+        display: none; /* Esconde o menu por padrão */
         position: absolute;
         top: 60px;
         right: 20px;
@@ -185,3 +185,4 @@ footer {
 .contact-button:hover {
     background-color: #0088cc;
 }
+
