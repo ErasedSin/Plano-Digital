@@ -18,7 +18,7 @@
             background: #1c1c1c; /* Cabeçalho escuro */
             padding: 10px 20px; /* Menor espaço no cabeçalho */
             display: flex;
-            justify-content: space-between;
+            justify-content: center; /* Centraliza logo */
             align-items: center;
             position: sticky;
             top: 0;
@@ -29,33 +29,7 @@
             height: 40px; /* Reduzir a altura da logo */
         }
 
-        nav {
-            display: flex;
-        }
-
-        nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-        }
-
-        nav li {
-            margin-left: 20px;
-        }
-
-        nav a {
-            color: #ffffff; /* Texto branco nos links */
-            text-decoration: none;
-            padding: 8px 15px;
-            border-radius: 5px;
-            transition: background 0.3s;
-        }
-
-        nav a:hover {
-            background: #333; /* Fundo no hover */
-        }
-
+        /* Seção de introdução */
         #home {
             text-align: center;
             padding: 50px 20px;
@@ -117,8 +91,8 @@
         /* Estilos para os produtos */
         .products {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
+            flex-direction: column; /* Coloca os produtos em coluna */
+            align-items: center; /* Centraliza os produtos */
             margin: 20px 0;
         }
 
@@ -126,8 +100,8 @@
             background: #1f1f1f; /* Fundo das caixas de produtos */
             border-radius: 8px;
             padding: 20px;
-            margin: 10px;
-            width: 250px;
+            margin: 10px 0; /* Apenas espaço vertical */
+            width: 80%; /* Largura fixa */
             transition: transform 0.3s;
             cursor: pointer;
         }
@@ -146,12 +120,8 @@
 
         /* Responsividade */
         @media (max-width: 600px) {
-            nav ul {
-                flex-direction: column;
-            }
-
             .product {
-                width: 90%; /* Reduzir a largura em telas pequenas */
+                width: 95%; /* Reduzir a largura em telas pequenas */
             }
         }
 
@@ -164,11 +134,6 @@
 <body>
     <header>
         <img src="LOGO-COM-NOME.png" alt="Logo do oPlano Digital" class="logo">
-        <nav>
-            <ul>
-                <li><a href="index.html">Início</a></li>
-            </ul>
-        </nav>
     </header>
 
     <!-- Seção de introdução -->
