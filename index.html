@@ -18,10 +18,10 @@
 
         header {
             background-color: white;
-            padding: 10px 20px; /* Diminui o cabeçalho */
+            padding: 5px 20px; /* Diminui ainda mais o cabeçalho */
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
         }
 
         header img {
@@ -69,6 +69,20 @@
             padding: 20px;
             margin: 10px;
             width: 200px;
+            transition: transform 0.2s; /* Efeito ao passar o mouse */
+        }
+
+        .product:hover {
+            transform: scale(1.05); /* Efeito de aumento ao passar o mouse */
+        }
+
+        .product h2 {
+            color: #333;
+        }
+
+        .product p {
+            color: green;
+            font-weight: bold;
         }
 
         .faq {
@@ -90,6 +104,9 @@
             color: white;
             text-align: center;
             padding: 10px 20px;
+            position: relative; /* Para o rodapé sempre no fundo */
+            bottom: 0;
+            width: 100%;
         }
 
         footer a {
