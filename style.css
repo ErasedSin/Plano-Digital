@@ -1,78 +1,19 @@
-/* Estilo Geral */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #000; /* Fundo preto */
-    color: #fff; /* Texto branco */
-    margin: 0;
-    padding: 0;
+header {
+    height: 50vh; /* diminui a altura do cabeçalho */
+    padding: 10px 0; /* ajusta o espaçamento interno */
+}
+
+h1 {
+    font-size: 2.5em; /* ajusta o tamanho do texto de boas-vindas */
+}
+
+p {
+    font-size: 1.2em; /* ajusta o tamanho do subtítulo e informações */
 }
 
 .logo {
+    width: 100px; /* ajusta o tamanho da logo */
     position: absolute;
-    top: 10px;
-    left: 10px;
-    height: 50px;
-}
-
-h1, h2 {
-    color: #ff0000; /* Vermelho para títulos */
-    text-align: center;
-}
-
-.pacotes-section {
-    background-color: #fff;
-    color: #000;
-    padding: 20px;
-    display: flex;
-    justify-content: space-around;
-}
-
-.pacote {
-    border: 1px solid #ccc;
-    padding: 10px;
-    border-radius: 10px;
-    width: 200px;
-    text-align: center;
-}
-
-.pacote h3 {
-    background-color: #ff0000;
-    color: #fff;
-    padding: 5px;
-}
-
-.faq-section {
-    padding: 20px;
-    background-color: #fff;
-    color: #000;
-}
-
-.faq-item {
-    margin-bottom: 10px;
-}
-
-.faq-toggle {
-    background-color: #ff0000;
-    color: #fff;
-    padding: 10px;
-    width: 100%;
-    border: none;
-    cursor: pointer;
-}
-
-.faq-content {
-    display: none;
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-top: 1px solid #ddd;
-}
-
-footer {
-    background-color: #333;
-    color: #fff;
-    text-align: center;
-    padding: 10px 0;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    top: 20px;
+    left: 20px;
 }
