@@ -1,4 +1,68 @@
-/* Perguntas Frequentes (FAQ) - Aparência mais moderna */
+/* Estilo geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+/* Estilo do header */
+header {
+    background: linear-gradient(135deg, #2980b9, #8e44ad);
+    color: white;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.logo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+
+.typing-animation {
+    font-size: 3rem;
+    color: #e74c3c;
+    animation: typing 3s steps(30, end), blink-caret 0.5s step-end infinite;
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: orange; }
+}
+
+/* Seção de Planos */
+.planos {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+}
+
+.plano {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    padding: 20px;
+    margin: 0 15px;
+    width: 200px;
+}
+
+.plano h2 {
+    color: red;
+    font-size: 1.5rem;
+}
+
+.plano p {
+    color: #2980b9;
+    font-size: 1.2rem;
+}
+
+/* Perguntas Frequentes (FAQ) */
 .faq {
     background-color: #ffffff;
     padding: 40px 20px;
@@ -51,42 +115,4 @@ summary {
     align-items: center;
 }
 
-details[open] summary {
-    color: #3498db;
-}
-
-summary::before {
-    content: "+";
-    color: #3498db;
-    font-size: 1.5rem;
-    margin-right: 10px;
-    transition: transform 0.3s ease;
-}
-
-details[open] summary::before {
-    content: "-";
-    transform: rotate(180deg);
-}
-
-details p {
-    margin-top: 15px;
-    font-size: 1.1rem;
-    color: #7f8c8d;
-    line-height: 1.6;
-}
-
-/* Adicionando transições suaves */
-details[open] p {
-    animation: fadeIn 0.4s ease;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
+details[ope
