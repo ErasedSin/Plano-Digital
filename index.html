@@ -14,7 +14,7 @@
             background-color: #222; /* Fundo escuro */
             color: #fff;
         }
-        
+
         header {
             display: flex;
             align-items: center;
@@ -22,7 +22,7 @@
             padding: 10px 20px;
             background-color: #111; /* Fundo do cabeçalho */
         }
-        
+
         .logo {
             height: 50px; /* Reduzido */
         }
@@ -52,6 +52,7 @@
             background-color: #333; /* Fundo dos pacotes */
             padding: 20px;
             margin-top: 20px;
+            border-radius: 8px;
         }
 
         .package {
@@ -60,10 +61,25 @@
             padding: 20px;
             margin: 15px;
             transition: transform 0.3s;
+            background-color: #444; /* Fundo das caixas de pacotes */
         }
 
         .package:hover {
             transform: scale(1.05);
+        }
+
+        .package h3 {
+            margin: 0 0 10px;
+        }
+
+        .package p {
+            margin: 5px 0;
+        }
+
+        .package-price {
+            font-size: 1.5em;
+            color: #ffcc00; /* Cor do preço */
+            margin: 10px 0;
         }
 
         .package-button {
@@ -120,7 +136,7 @@
             bottom: 0;
             width: 100%;
         }
-        
+
         footer a {
             color: #008CBA; /* Cor do link */
             text-decoration: none;
@@ -152,19 +168,19 @@
         <div class="package">
             <h3>Pacote Básico</h3>
             <p>Inclui design de logotipo e identidade visual.</p>
-            <p>Preço: R$ 300,00</p>
+            <p class="package-price">Preço: R$ 300,00</p>
             <button class="package-button">Escolher</button>
         </div>
         <div class="package">
             <h3>Pacote Intermediário</h3>
             <p>Inclui design de logotipo, identidade visual e 3 variações.</p>
-            <p>Preço: R$ 600,00</p>
+            <p class="package-price">Preço: R$ 600,00</p>
             <button class="package-button">Escolher</button>
         </div>
         <div class="package">
             <h3>Pacote Avançado</h3>
             <p>Inclui design de logotipo, identidade visual e material promocional.</p>
-            <p>Preço: R$ 1.200,00</p>
+            <p class="package-price">Preço: R$ 1.200,00</p>
             <button class="package-button">Escolher</button>
         </div>
     </section>
