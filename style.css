@@ -1,40 +1,92 @@
-/* Perguntas Frequentes */
+/* Perguntas Frequentes (FAQ) - Aparência mais moderna */
 .faq {
-    background-color: #f4f4f4; /* Cor de fundo clara */
-    padding: 20px;
-    margin: 40px 0;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
+    padding: 40px 20px;
+    margin: 60px auto;
+    border-radius: 15px;
+    max-width: 900px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 .faq h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #2c3e50;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-bottom: 3px solid #3498db;
+    display: inline-block;
+    padding-bottom: 10px;
 }
 
 .faq-details {
-    max-width: 800px;
-    margin: 0 auto;
+    margin-top: 20px;
+    text-align: left;
 }
 
 details {
-    background-color: white;
-    margin-bottom: 10px;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #f7f9fb;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+details:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    transform: scale(1.02);
 }
 
 summary {
-    font-weight: bold;
-    font-size: 1.2rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: #34495e;
     cursor: pointer;
+    outline: none;
+    padding-left: 5px;
+    display: flex;
+    align-items: center;
+}
+
+details[open] summary {
+    color: #3498db;
+}
+
+summary::before {
+    content: "+";
+    color: #3498db;
+    font-size: 1.5rem;
+    margin-right: 10px;
+    transition: transform 0.3s ease;
+}
+
+details[open] summary::before {
+    content: "-";
+    transform: rotate(180deg);
 }
 
 details p {
-    margin-top: 10px;
-    font-size: 1rem;
-    color: #555;
+    margin-top: 15px;
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+/* Adicionando transições suaves */
+details[open] p {
+    animation: fadeIn 0.4s ease;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
