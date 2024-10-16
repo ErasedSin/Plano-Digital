@@ -150,6 +150,11 @@
         .product p {
             margin: 5px 0;
         }
+
+        .product .price {
+            font-size: 1.5em;
+            color: #FFD700; /* Cor do preço em dourado */
+        }
     </style>
 </head>
 <body>
@@ -181,19 +186,52 @@
     <!-- Produtos -->
     <section class="products">
         <div class="product">
-            <h3>Logotipo</h3>
-            <p>Preço: R$ 150,00</p>
-            <p>Inclui: 3 opções, 2 revisões.</p>
+            <h3>Pacote Bronze</h3>
+            <p class="price">R$ 99,90</p>
+            <p>em até 12x no cartão</p>
+            <ul>
+                <li>Logotipo</li>
+                <li>Marcas d'água</li>
+                <li>Cartão de Visita</li>
+            </ul>
         </div>
         <div class="product">
-            <h3>Cartão de Visitas</h3>
-            <p>Preço: R$ 50,00</p>
-            <p>Inclui: Design frente e verso.</p>
+            <h3>Pacote Prata</h3>
+            <p class="price">R$ 179,90</p>
+            <p>em até 12x no cartão</p>
+            <ul>
+                <li>Logotipo</li>
+                <li>Marcas d'água</li>
+                <li>Cartão de Visita</li>
+                <li>Paleta de Cores</li>
+                <li>Tipografias</li>
+            </ul>
         </div>
         <div class="product">
-            <h3>Site Completo</h3>
-            <p>Preço: R$ 1.000,00</p>
-            <p>Inclui: 5 páginas, responsivo.</p>
+            <h3>Pacote Ouro</h3>
+            <p class="price">R$ 289,90</p>
+            <p>em até 12x no cartão</p>
+            <ul>
+                <li>Logotipo</li>
+                <li>Marcas d'água</li>
+                <li>Cartão de Visita</li>
+                <li>Paleta de Cores</li>
+                <li>Tipografias</li>
+                <li>Animação de Logotipo</li>
+            </ul>
+        </div>
+        <div class="product">
+            <h3>Pacote Diamante</h3>
+            <p class="price">R$ 479,90</p>
+            <p>em até 12x no cartão</p>
+            <ul>
+                <li>Logotipo</li>
+                <li>Marcas d'água</li>
+                <li>Cartão de Visita</li>
+                <li>Paleta de Cores</li>
+                <li>Tipografias</li>
+                <li>Animação de Logotipo</li>
+            </ul>
         </div>
     </section>
 
@@ -222,15 +260,13 @@
 
     <script>
         const images = document.querySelectorAll('.image-slider img');
-        let currentIndex = 0;
+        let current = 0;
 
-        function showNextImage() {
-            images[currentIndex].classList.remove('active');
-            currentIndex = (currentIndex + 1) % images.length;
-            images[currentIndex].classList.add('active');
-        }
-
-        setInterval(showNextImage, 7000); // Troca a imagem a cada 7 segundos
+        setInterval(() => {
+            images[current].classList.remove('active');
+            current = (current + 1) % images.length;
+            images[current].classList.add('active');
+        }, 7000); // Troca de imagem a cada 7 segundos
     </script>
 </body>
 </html>
