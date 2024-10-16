@@ -7,107 +7,157 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a;
-            color: #fff;
+            background-color: #121212; /* Fundo escuro */
+            color: #ffffff; /* Texto branco */
         }
+
         header {
+            background: #1c1c1c; /* Cabeçalho escuro */
+            padding: 10px 20px; /* Menor espaço no cabeçalho */
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px;
-            background-color: #000;
-            position: relative;
-            z-index: 10;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
+
         .logo {
-            height: 40px;
+            height: 40px; /* Reduzir a altura da logo */
         }
+
         nav {
             display: flex;
-            align-items: center;
         }
+
         nav ul {
             list-style: none;
+            margin: 0;
             padding: 0;
             display: flex;
         }
-        nav ul li {
-            margin: 0 15px;
+
+        nav li {
+            margin-left: 20px;
         }
+
         nav a {
+            color: #ffffff; /* Texto branco nos links */
             text-decoration: none;
-            color: #fff;
-            transition: color 0.3s;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
         }
+
         nav a:hover {
-            color: #3498db;
+            background: #333; /* Fundo no hover */
         }
-        section#home {
+
+        #home {
             text-align: center;
             padding: 50px 20px;
-            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('sua-imagem-de-fundo.jpg') no-repeat center center/cover;
-            animation: fadeIn 1s ease-in;
         }
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
+
+        #home h1 {
+            font-size: 2.5rem;
+            animation: fadeIn 1s ease; /* Animação de entrada */
         }
-        .faq {
-            margin: 20px 0;
-            padding: 20px;
-        }
-        .faq-details details {
+
+        #home p {
+            font-size: 1.2rem;
             margin: 10px 0;
-            cursor: pointer;
         }
-        .faq-details summary {
-            background: none;
-            padding: 10px;
-            border: none;
-            font-size: 18px;
-            color: #fff;
-            transition: all 0.3s;
-        }
-        .faq-details summary:hover {
-            transform: translateY(-3px);
-            color: #3498db;
-        }
+
         footer {
-            background-color: #000;
+            background-color: #1c1c1c;
+            color: #ffffff;
             text-align: center;
             padding: 10px 0;
-            position: relative;
+            position: relative; /* Ajusta a posição do rodapé */
             bottom: 0;
             width: 100%;
         }
-        footer a {
-            color: #3498db;
-            text-decoration: none;
-        }
-        .produtos {
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 20px;
-        }
-        .produto {
-            background-color: #222;
-            border-radius: 5px;
-            padding: 20px;
-            margin: 10px;
-            flex: 1 1 30%;
-            position: relative;
+
+        /* Animações para perguntas frequentes */
+        .faq-details details {
+            background: transparent; /* Remover fundo */
+            border: none; /* Sem bordas */
+            padding: 10px;
+            margin: 10px 0;
+            cursor: pointer;
             transition: transform 0.3s;
         }
-        .produto:hover {
-            transform: scale(1.05);
+
+        .faq-details details:hover {
+            transform: translateY(-3px); /* Elevação ao passar o mouse */
         }
-        .preco {
-            font-size: 20px;
-            color: #3498db;
+
+        .faq-details summary {
+            font-weight: bold;
+            font-size: 1.2rem;
+            color: #e3e3e3;
+        }
+
+        .faq-details p {
+            margin: 5px 0;
+            color: #b3b3b3; /* Texto das respostas */
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.3s, transform 0.3s;
+        }
+
+        .faq-details details[open] p {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Estilos para os produtos */
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .product {
+            background: #1f1f1f; /* Fundo das caixas de produtos */
+            border-radius: 8px;
+            padding: 20px;
+            margin: 10px;
+            width: 250px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .product:hover {
+            transform: scale(1.05); /* Aumento ao passar o mouse */
+        }
+
+        .product h3 {
+            margin: 0 0 10px;
+        }
+
+        .product p {
+            margin: 5px 0;
+        }
+
+        /* Responsividade */
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .product {
+                width: 90%; /* Reduzir a largura em telas pequenas */
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -117,15 +167,11 @@
         <nav>
             <ul>
                 <li><a href="index.html">Início</a></li>
-                <li><a href="form.html">Formulário</a></li>
-                <li><a href="regras.html">Regras de Contato</a></li>
-                <li><a href="chat.html">Chat</a></li>
-                <li><a href="atualizacoes.html">Atualizações</a></li>
-                <li><a href="relatorio.html">Relatório</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Seção de introdução -->
     <section id="home">
         <h1>Bem-vindo ao oPlano Digital</h1>
         <p>Transformamos suas ideias em realidade visual.</p>
@@ -134,23 +180,24 @@
         <p>Instagram: <a href="https://instagram.com/oplanodigital_" target="_blank">@oplanodigital_</a></p>
     </section>
 
-    <div class="produtos">
-        <div class="produto">
-            <h2>Pacote Básico</h2>
-            <p class="preco">R$ 99,90</p>
-            <p>Design simples e eficiente.</p>
+    <!-- Produtos -->
+    <section class="products">
+        <div class="product">
+            <h3>Pacote Básico</h3>
+            <p>Preço: R$ 200,00</p>
+            <p>Inclui logotipo e cartão de visita.</p>
         </div>
-        <div class="produto">
-            <h2>Pacote Avançado</h2>
-            <p class="preco">R$ 199,90</p>
-            <p>Design mais elaborado com revisões.</p>
+        <div class="product">
+            <h3>Pacote Intermediário</h3>
+            <p>Preço: R$ 500,00</p>
+            <p>Inclui logotipo, cartão de visita e papelaria.</p>
         </div>
-        <div class="produto">
-            <h2>Pacote Premium</h2>
-            <p class="preco">R$ 299,90</p>
-            <p>Design personalizado e exclusivo.</p>
+        <div class="product">
+            <h3>Pacote Premium</h3>
+            <p>Preço: R$ 1000,00</p>
+            <p>Inclui logotipo, cartão de visita, papelaria e branding.</p>
         </div>
-    </div>
+    </section>
 
     <!-- Perguntas Frequentes -->
     <section class="faq">
@@ -172,20 +219,21 @@
     </section>
 
     <footer>
-        <p>© 2024 oPlano Digital. Todos os direitos reservados. Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/" target="_blank">Gaio Moreira</a></p>
+        <p>© 2024 oPlano Digital. Todos os direitos reservados.</p>
+        <p>Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/" style="color: blue;">Gaio Moreira</a></p>
     </footer>
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-        (function(){
-            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-            s1.async=true;
-            s1.src='https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
-            s1.charset='UTF-8';
-            s1.setAttribute('crossorigin','*');
-            s0.parentNode.insertBefore(s1,s0);
-        })();
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
     </script>
     <!--End of Tawk.to Script-->
 </body>
