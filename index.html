@@ -10,124 +10,74 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212; /* Fundo escuro */
-            color: #ffffff; /* Texto branco */
+            background-color: #2c2c2c; /* Fundo mais escuro */
+            color: #fff;
+            overflow-x: hidden; /* Impede rolagem horizontal */
         }
-
         header {
-            background: #1c1c1c; /* Cabeçalho escuro */
-            padding: 10px 20px; /* Menor espaço no cabeçalho */
             display: flex;
-            justify-content: center; /* Centraliza logo */
+            justify-content: space-between;
             align-items: center;
-            position: sticky;
-            top: 0;
+            padding: 10px 20px; /* Cabeçalho pequeno */
+            background-color: #333;
+            position: fixed;
+            width: 100%;
             z-index: 1000;
         }
-
         .logo {
-            height: 40px; /* Reduzir a altura da logo */
+            max-width: 150px; /* Ajusta o tamanho da logo */
         }
-
-        /* Seção de introdução */
-        #home {
+        section#home {
+            position: relative;
             text-align: center;
-            padding: 50px 20px;
+            margin-top: 70px; /* Espaço para o cabeçalho fixo */
         }
-
-        #home h1 {
-            font-size: 2.5rem;
-            animation: fadeIn 1s ease; /* Animação de entrada */
+        .background-images {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: 100%;
+            overflow: hidden; /* Impede a visualização das partes externas */
         }
-
-        #home p {
-            font-size: 1.2rem;
-            margin: 10px 0;
+        .background-images img {
+            width: 100%;
+            height: auto;
+            position: absolute;
+            animation: slide 21s infinite; /* Duração total da animação */
         }
-
+        @keyframes slide {
+            0%, 30% {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            35%, 100% {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
         footer {
-            background-color: #1c1c1c;
-            color: #ffffff;
+            background-color: #111; /* Rodapé preto */
             text-align: center;
-            padding: 10px 0;
-            position: relative; /* Ajusta a posição do rodapé */
+            padding: 10px;
+            position: relative;
             bottom: 0;
             width: 100%;
         }
-
-        /* Animações para perguntas frequentes */
+        .faq {
+            margin: 40px;
+        }
         .faq-details details {
-            background: transparent; /* Remover fundo */
-            border: none; /* Sem bordas */
-            padding: 10px;
             margin: 10px 0;
+            padding: 10px;
+            background: none; /* Remove fundo da caixa */
+            border: none; /* Remove bordas */
             cursor: pointer;
-            transition: transform 0.3s;
+            transition: color 0.3s;
         }
-
         .faq-details details:hover {
-            transform: translateY(-3px); /* Elevação ao passar o mouse */
-        }
-
-        .faq-details summary {
-            font-weight: bold;
-            font-size: 1.2rem;
-            color: #e3e3e3;
-        }
-
-        .faq-details p {
-            margin: 5px 0;
-            color: #b3b3b3; /* Texto das respostas */
-            opacity: 0;
-            transform: translateY(10px);
-            transition: opacity 0.3s, transform 0.3s;
-        }
-
-        .faq-details details[open] p {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* Estilos para os produtos */
-        .products {
-            display: flex;
-            flex-direction: column; /* Coloca os produtos em coluna */
-            align-items: center; /* Centraliza os produtos */
-            margin: 20px 0;
-        }
-
-        .product {
-            background: #1f1f1f; /* Fundo das caixas de produtos */
-            border-radius: 8px;
-            padding: 20px;
-            margin: 10px 0; /* Apenas espaço vertical */
-            width: 80%; /* Largura fixa */
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        .product:hover {
-            transform: scale(1.05); /* Aumento ao passar o mouse */
-        }
-
-        .product h3 {
-            margin: 0 0 10px;
-        }
-
-        .product p {
-            margin: 5px 0;
-        }
-
-        /* Responsividade */
-        @media (max-width: 600px) {
-            .product {
-                width: 95%; /* Reduzir a largura em telas pequenas */
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+            color: #FFD700; /* Muda a cor ao passar o mouse */
         }
     </style>
 </head>
@@ -136,32 +86,17 @@
         <img src="LOGO-COM-NOME.png" alt="Logo do oPlano Digital" class="logo">
     </header>
 
-    <!-- Seção de introdução -->
     <section id="home">
+        <div class="background-images">
+            <img src="1.jpg" alt="Imagem 1">
+            <img src="2.jpg" alt="Imagem 2">
+            <img src="3.jpg" alt="Imagem 3">
+        </div>
         <h1>Bem-vindo ao oPlano Digital</h1>
         <p>Transformamos suas ideias em realidade visual.</p>
         <p>O planejamento perfeito pro seu negócio. 🎯</p>
         <p>Contato: +55 21 99206-9848</p>
         <p>Instagram: <a href="https://instagram.com/oplanodigital_" target="_blank">@oplanodigital_</a></p>
-    </section>
-
-    <!-- Produtos -->
-    <section class="products">
-        <div class="product">
-            <h3>Pacote Básico</h3>
-            <p>Preço: R$ 200,00</p>
-            <p>Inclui logotipo e cartão de visita.</p>
-        </div>
-        <div class="product">
-            <h3>Pacote Intermediário</h3>
-            <p>Preço: R$ 500,00</p>
-            <p>Inclui logotipo, cartão de visita e papelaria.</p>
-        </div>
-        <div class="product">
-            <h3>Pacote Premium</h3>
-            <p>Preço: R$ 1000,00</p>
-            <p>Inclui logotipo, cartão de visita, papelaria e branding.</p>
-        </div>
     </section>
 
     <!-- Perguntas Frequentes -->
@@ -188,18 +123,18 @@
         <p>Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/" style="color: blue;">Gaio Moreira</a></p>
     </footer>
 
-    <!--Start of Tawk.to Script-->
+    <!-- Start of Tawk.to Script -->
     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-    })();
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
     </script>
-    <!--End of Tawk.to Script-->
+    <!-- End of Tawk.to Script -->
 </body>
 </html>
