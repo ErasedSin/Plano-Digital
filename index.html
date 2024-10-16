@@ -122,8 +122,6 @@
         .faq {
             margin: 60px 20px 20px; /* espaço para o cabeçalho fixo */
             padding: 20px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
         }
 
         .faq h2 {
@@ -146,17 +144,23 @@
             color: #fff;
             padding: 10px;
             border-radius: 5px;
-            background-color: rgba(255, 255, 255, 0.2);
+            /* Removido fundo da caixa */
         }
 
         summary:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+            color: #2ecc71; /* cor ao passar o mouse */
             transform: translateY(-2px); /* leve movimento ao passar o mouse */
+            transition: color 0.3s, transform 0.3s;
         }
 
         p {
             margin: 5px 0;
             color: #fff;
+            transition: transform 0.3s; /* animação de movimento */
+        }
+
+        details[open] p {
+            transform: translateY(5px); /* leve movimento quando aberto */
         }
     </style>
 </head>
