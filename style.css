@@ -1,19 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 header {
-    height: 50vh; /* diminui a altura do cabeçalho */
-    padding: 10px 0; /* ajusta o espaçamento interno */
+    background: linear-gradient(to right, #00f, #aaf); /* Mudança no gradiente */
+    color: white;
+    padding: 20px;
+    text-align: center;
 }
 
-h1 {
-    font-size: 2.5em; /* ajusta o tamanho do texto de boas-vindas */
-}
-
-p {
-    font-size: 1.2em; /* ajusta o tamanho do subtítulo e informações */
-}
-
-.logo {
-    width: 100px; /* ajusta o tamanho da logo */
+header .logo {
     position: absolute;
     top: 20px;
     left: 20px;
+    width: 100px; /* Ajuste o tamanho conforme necessário */
+}
+
+h1 {
+    font-size: 2.5rem; /* Reduz o tamanho do cabeçalho */
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2rem;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.planos {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.plano {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.plano h2 {
+    background-color: red;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.plano p {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
 }
