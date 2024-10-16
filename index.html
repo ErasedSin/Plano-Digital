@@ -72,6 +72,8 @@
             text-align: center;
             width: calc(25% - 40px);
             transition: transform 0.3s;
+            position: relative; /* Para permitir o posicionamento do novo elemento */
+            cursor: move; /* Indica que a caixa pode ser arrastada */
         }
 
         .product:hover {
@@ -102,6 +104,19 @@
         .product button:hover {
             background-color: #27ae60;
             transform: translateY(-2px);
+        }
+
+        .option {
+            display: none;
+            position: absolute;
+            bottom: -40px; /* Colocando abaixo do produto */
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #2980b9; /* Cor da opção */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            transition: opacity 0.3s;
         }
 
         footer {
@@ -143,7 +158,6 @@
             font-weight: bold;
             color: #fff;
             padding: 10px;
-            border-radius: 5px;
             /* Removido fundo da caixa */
         }
 
@@ -178,25 +192,29 @@
     </div>
 
     <div class="products">
-        <div class="product">
+        <div class="product" draggable="true" ondragend="showOption(this)">
             <h2>Bronze</h2>
             <p>R$ 99,90</p>
             <button>Saiba Mais</button>
+            <div class="option">Opção Selecionada!</div>
         </div>
-        <div class="product">
+        <div class="product" draggable="true" ondragend="showOption(this)">
             <h2>Prata</h2>
             <p>R$ 179,90</p>
             <button>Saiba Mais</button>
+            <div class="option">Opção Selecionada!</div>
         </div>
-        <div class="product">
+        <div class="product" draggable="true" ondragend="showOption(this)">
             <h2>Ouro</h2>
             <p>R$ 289,90</p>
             <button>Saiba Mais</button>
+            <div class="option">Opção Selecionada!</div>
         </div>
-        <div class="product">
+        <div class="product" draggable="true" ondragend="showOption(this)">
             <h2>Diamante</h2>
             <p>R$ 479,90</p>
             <button>Saiba Mais</button>
+            <div class="option">Opção Selecionada!</div>
         </div>
     </div>
 
@@ -222,5 +240,16 @@
     <footer>
         <p>© 2024 oPlano Digital. Todos os direitos reservados. Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/">Gaio Moreira</a></p>
     </footer>
+
+    <script>
+        function showOption(product) {
+            const option = product.querySelector('.option');
+            option.style.display = 'block';
+            option.style.opacity = '1';
+            setTimeout(() => {
+                option.style.opacity = '0';
+            }, 2000); // esconde a opção após 2 segundos
+        }
+    </script>
 </body>
 </html>
