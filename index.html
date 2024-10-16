@@ -83,30 +83,30 @@
             transform: translateY(-50%); /* Ajusta a posição */
         }
 
-       .faq {
-        padding: 20px;
-        text-align: left;
-        color: #000; /* Cor do texto na seção FAQ */
-    }
+        .faq {
+            padding: 20px;
+            text-align: left;
+            color: #ffffff; /* Cor do texto na seção FAQ */
+        }
 
-    .faq-details details {
-        margin: 10px 0;
-        background: none; /* Remove fundo */
-        border: none; /* Remove borda */
-        color: #000; /* Cor do texto das respostas */
-    }
+        .faq-details details {
+            margin: 10px 0;
+            background: none; /* Remove fundo */
+            border: none; /* Remove borda */
+            color: #ffffff; /* Cor do texto das respostas */
+        }
 
-    .faq-details summary {
-        cursor: pointer; /* Indica que pode ser clicado */
-        padding: 10px;
-        border: 1px solid transparent; /* Bordas invisíveis */
-        transition: border-color 0.3s, transform 0.3s; /* Animação da borda */
-    }
+        .faq-details summary {
+            cursor: pointer; /* Indica que pode ser clicado */
+            padding: 10px;
+            border: 1px solid transparent; /* Bordas invisíveis */
+            transition: border-color 0.3s, transform 0.3s; /* Animação da borda */
+        }
 
-    .faq-details summary:hover {
-        border-color: #000; /* Borda visível ao passar o mouse */
-        transform: scale(1.05); /* Animação de leve aumento */
-    }
+        .faq-details summary:hover {
+            border-color: #fff; /* Borda visível ao passar o mouse */
+            transform: scale(1.05); /* Animação de leve aumento */
+        }
 
         footer {
             background: #000; /* Rodapé preto */
@@ -261,13 +261,15 @@
 
     <script>
         const images = document.querySelectorAll('.image-slider img');
-        let current = 0;
+        let currentIndex = 0;
 
-        setInterval(() => {
-            images[current].classList.remove('active');
-            current = (current + 1) % images.length;
-            images[current].classList.add('active');
-        }, 7000); // Troca de imagem a cada 7 segundos
+        function changeImage() {
+            images[currentIndex].classList.remove('active');
+            currentIndex = (currentIndex + 1) % images.length;
+            images[currentIndex].classList.add('active');
+        }
+
+        setInterval(changeImage, 7000); // Troca a imagem a cada 7 segundos
     </script>
 </body>
 </html>
