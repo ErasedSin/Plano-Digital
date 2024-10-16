@@ -47,7 +47,7 @@
             padding: 20px;
             position: relative;
             overflow: hidden; /* Para as imagens que se movem */
-            height: 500px; /* Altura do slider */
+            height: 400px; /* Altura do slider */
         }
 
         .image-slider {
@@ -62,12 +62,14 @@
         .image-slider img {
             position: absolute;
             width: 100%;
-            height: 100%;
+            height: auto; /* Manter a proporção */
+            max-height: 100%; /* Limitar a altura */
             object-fit: cover; /* Para cobrir toda a área */
             opacity: 0;
             transition: opacity 1s ease-in-out;
-            top: 0;
-            left: 0;
+            top: 50%; /* Centraliza verticalmente */
+            left: 50%; /* Centraliza horizontalmente */
+            transform: translate(-50%, -50%); /* Ajusta a posição */
         }
 
         .image-slider img.active {
@@ -77,6 +79,8 @@
         .content {
             position: relative;
             z-index: 1; /* Garante que o texto esteja acima das imagens */
+            top: 50%; /* Centraliza verticalmente */
+            transform: translateY(-50%); /* Ajusta a posição */
         }
 
         .faq {
