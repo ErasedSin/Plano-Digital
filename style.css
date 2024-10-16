@@ -1,102 +1,78 @@
-/* Reset básico para remover espaçamentos padrões */
-* {
+/* Estilo Geral */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #000; /* Fundo preto */
+    color: #fff; /* Texto branco */
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-/* Fundo preto e texto branco */
-body {
-    font-family: 'Montserrat', sans-serif;
-    background-color: #121212; /* Preto suave */
-    color: #f5f5f5; /* Texto claro */
-    line-height: 1.6;
-}
-
-/* Estilo do cabeçalho */
-header {
-    background-color: #1f1f1f; /* Fundo mais escuro para o cabeçalho */
-    padding: 20px;
-    text-align: center;
-    position: relative;
-}
-
-/* Estiliza a logo */
 .logo {
     position: absolute;
-    top: -15px;
+    top: 10px;
     left: 10px;
-    width: 100px;
-    height: auto;
+    height: 50px;
 }
 
-/* Estiliza o botão de menu (as barrinhas) */
-.menu-toggle {
-    position: absolute;
-    top: 20px;
-    right: 20px;
+h1, h2 {
+    color: #ff0000; /* Vermelho para títulos */
+    text-align: center;
+}
+
+.pacotes-section {
+    background-color: #fff;
+    color: #000;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.pacote {
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    width: 200px;
+    text-align: center;
+}
+
+.pacote h3 {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 5px;
+}
+
+.faq-section {
+    padding: 20px;
+    background-color: #fff;
+    color: #000;
+}
+
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-toggle {
+    background-color: #ff0000;
+    color: #fff;
+    padding: 10px;
+    width: 100%;
+    border: none;
     cursor: pointer;
 }
 
-.menu-toggle .bar {
-    width: 30px;
-    height: 3px;
-    background-color: #f5f5f5;
-    margin: 5px 0;
-    transition: 0.4s;
-}
-
-/* Estilo do menu de navegação */
-nav ul {
-    list-style: none;
-    padding: 0;
-}
-
-nav ul li {
-    display: inline-block;
-    margin: 0 15px;
-}
-
-nav ul li a {
-    color: #f5f5f5;
-    text-decoration: none;
-    font-weight: 400;
-    transition: color 0.3s;
-}
-
-nav ul li a:hover {
-    color: #00aaff;
-}
-
-/* Estilo das seções */
-section {
-    padding: 50px 20px;
-    text-align: center;
-}
-
-/* Títulos das seções */
-h1, h2 {
-    color: #00aaff;
-    margin-bottom: 20px;
-}
-
-/* Estilo para o menu em telas pequenas (pode ser escondido ou exibido clicando no hamburguer) */
-nav {
-    display: none; /* Começa escondido */
-}
-
-.menu-toggle.active + nav {
-    display: block; /* Exibe o menu quando o botão de hambúrguer é clicado */
-}
-
-/* Estilo do rodapé */
-footer {
-    background-color: #1f1f1f;
-    color: #f5f5f5;
-    text-align: center;
+.faq-content {
+    display: none;
+    background-color: #f1f1f1;
     padding: 10px;
-    font-size: 12px;
-    position: fixed;
-    width: 100%;
+    border-top: 1px solid #ddd;
+}
+
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
     bottom: 0;
+    width: 100%;
 }
