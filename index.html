@@ -7,110 +7,107 @@
     <link rel="stylesheet" href="style.css">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #1a1a1a; /* Fundo mais escuro */
+            background-color: #1a1a1a;
             color: #fff;
         }
-
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 10px 20px; /* Cabeçalho pequeno */
-            background-color: #333;
+            padding: 10px 20px;
+            background-color: #000;
+            position: relative;
+            z-index: 10;
         }
-
         .logo {
-            width: 150px;
-            transition: transform 0.3s;
+            height: 40px;
         }
-
-        .logo:hover {
-            transform: scale(1.1); /* Animação de hover na logo */
-        }
-
         nav {
             display: flex;
-            gap: 15px;
+            align-items: center;
         }
-
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
         nav a {
-            color: #fff;
             text-decoration: none;
-            padding: 10px 15px;
-            border-radius: 5px;
-            transition: background-color 0.3s;
+            color: #fff;
+            transition: color 0.3s;
         }
-
         nav a:hover {
-            background-color: #555; /* Cor de fundo ao passar o mouse */
+            color: #3498db;
         }
-
-        #home {
+        section#home {
             text-align: center;
             padding: 50px 20px;
-            animation: fadeIn 1s ease-in; /* Animação de entrada */
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('sua-imagem-de-fundo.jpg') no-repeat center center/cover;
+            animation: fadeIn 1s ease-in;
         }
-
         @keyframes fadeIn {
             from { opacity: 0; }
             to { opacity: 1; }
         }
-
         .faq {
+            margin: 20px 0;
             padding: 20px;
         }
-
         .faq-details details {
-            background: none; /* Sem fundo nas perguntas */
+            margin: 10px 0;
             cursor: pointer;
+        }
+        .faq-details summary {
+            background: none;
             padding: 10px;
-            border-bottom: 1px solid #444;
-            transition: color 0.3s;
+            border: none;
+            font-size: 18px;
+            color: #fff;
+            transition: all 0.3s;
         }
-
-        .faq-details details:hover {
-            color: #ffa500; /* Cor ao passar o mouse */
+        .faq-details summary:hover {
+            transform: translateY(-3px);
+            color: #3498db;
         }
-
         footer {
+            background-color: #000;
             text-align: center;
             padding: 10px 0;
-            background-color: #333; /* Rodapé preto */
-            position: relative; /* Mantém o rodapé no final */
+            position: relative;
             bottom: 0;
             width: 100%;
         }
-
         footer a {
-            color: #00f; /* Link azul */
+            color: #3498db;
+            text-decoration: none;
         }
-
-        .product-container {
+        .produtos {
             display: flex;
-            flex-wrap: wrap;
             justify-content: space-around;
-            margin: 20px 0;
+            flex-wrap: wrap;
+            margin: 20px;
         }
-
-        .product-box {
-            width: calc(33% - 20px);
-            background: #444;
-            border-radius: 8px;
-            padding: 15px;
+        .produto {
+            background-color: #222;
+            border-radius: 5px;
+            padding: 20px;
             margin: 10px;
+            flex: 1 1 30%;
+            position: relative;
             transition: transform 0.3s;
         }
-
-        .product-box:hover {
-            transform: translateY(-5px); /* Animação ao passar o mouse */
+        .produto:hover {
+            transform: scale(1.05);
         }
-
-        .price {
-            font-size: 1.2em;
-            color: #ffa500; /* Cor dos preços */
+        .preco {
+            font-size: 20px;
+            color: #3498db;
         }
     </style>
 </head>
@@ -118,16 +115,17 @@
     <header>
         <img src="LOGO-COM-NOME.png" alt="Logo do oPlano Digital" class="logo">
         <nav>
-            <a href="index.html">Início</a>
-            <a href="form.html">Formulário</a>
-            <a href="regras.html">Regras de Contato</a>
-            <a href="chat.html">Chat</a>
-            <a href="atualizacoes.html">Atualizações</a>
-            <a href="relatorio.html">Relatório</a>
+            <ul>
+                <li><a href="index.html">Início</a></li>
+                <li><a href="form.html">Formulário</a></li>
+                <li><a href="regras.html">Regras de Contato</a></li>
+                <li><a href="chat.html">Chat</a></li>
+                <li><a href="atualizacoes.html">Atualizações</a></li>
+                <li><a href="relatorio.html">Relatório</a></li>
+            </ul>
         </nav>
     </header>
 
-    <!-- Seção de introdução -->
     <section id="home">
         <h1>Bem-vindo ao oPlano Digital</h1>
         <p>Transformamos suas ideias em realidade visual.</p>
@@ -136,27 +134,23 @@
         <p>Instagram: <a href="https://instagram.com/oplanodigital_" target="_blank">@oplanodigital_</a></p>
     </section>
 
-    <!-- Produtos -->
-    <section class="products">
-        <h2>Pacotes Disponíveis</h2>
-        <div class="product-container">
-            <div class="product-box">
-                <h3>Pacote Básico</h3>
-                <p class="price">R$ 199,00</p>
-                <p>Inclui logotipo e identidade visual.</p>
-            </div>
-            <div class="product-box">
-                <h3>Pacote Intermediário</h3>
-                <p class="price">R$ 399,00</p>
-                <p>Inclui logotipo, identidade visual e material de marketing.</p>
-            </div>
-            <div class="product-box">
-                <h3>Pacote Avançado</h3>
-                <p class="price">R$ 599,00</p>
-                <p>Inclui tudo do pacote intermediário e suporte contínuo.</p>
-            </div>
+    <div class="produtos">
+        <div class="produto">
+            <h2>Pacote Básico</h2>
+            <p class="preco">R$ 99,90</p>
+            <p>Design simples e eficiente.</p>
         </div>
-    </section>
+        <div class="produto">
+            <h2>Pacote Avançado</h2>
+            <p class="preco">R$ 199,90</p>
+            <p>Design mais elaborado com revisões.</p>
+        </div>
+        <div class="produto">
+            <h2>Pacote Premium</h2>
+            <p class="preco">R$ 299,90</p>
+            <p>Design personalizado e exclusivo.</p>
+        </div>
+    </div>
 
     <!-- Perguntas Frequentes -->
     <section class="faq">
@@ -183,15 +177,15 @@
 
     <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-    (function(){
-        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-        s1.async=true;
-        s1.src='https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
-        s1.charset='UTF-8';
-        s1.setAttribute('crossorigin','*');
-        s0.parentNode.insertBefore(s1,s0);
-    })();
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+            var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+            s1.async=true;
+            s1.src='https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
+            s1.charset='UTF-8';
+            s1.setAttribute('crossorigin','*');
+            s0.parentNode.insertBefore(s1,s0);
+        })();
     </script>
     <!--End of Tawk.to Script-->
 </body>
