@@ -1,222 +1,173 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>oPlano Digital</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>oPlano Digital - Início</title>
+    <link rel="stylesheet" href="style.css">
     <style>
+        /* Estilos Gerais */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #2c3e50; /* fundo escuro */
+            background-color: #222; /* Fundo escuro */
             color: #fff;
         }
-
+        
         header {
-            background-color: transparent;
             display: flex;
-            justify-content: space-between;
             align-items: center;
+            justify-content: space-between;
             padding: 10px 20px;
-            position: fixed;
-            width: 100%;
-            z-index: 10;
+            background-color: #111; /* Fundo do cabeçalho */
         }
-
+        
         .logo {
-            font-size: 2em;
-            color: #fff;
+            height: 50px; /* Reduzido */
         }
 
-        h1 {
-            text-align: center;
-            margin-top: 60px; /* espaço para o cabeçalho fixo */
-            animation: slideIn 1s ease-out;
-        }
-
-        @keyframes slideIn {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        .cta {
-            text-align: center;
-            margin: 20px 0;
-        }
-
-        .cta p {
-            margin: 0;
-            font-size: 1.2em;
-        }
-
-        .products {
+        nav {
             display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-            margin: 80px 20px 20px; /* espaço para o cabeçalho fixo */
+            gap: 15px;
         }
 
-        .product {
-            background-color: #f1c40f;
-            border-radius: 8px;
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #008CBA; /* Cor do hover */
+        }
+
+        section {
             padding: 20px;
-            margin: 10px;
             text-align: center;
-            width: calc(25% - 40px);
-            transition: transform 0.3s;
-            position: relative; /* Para permitir o posicionamento do novo elemento */
-            cursor: move; /* Indica que a caixa pode ser arrastada */
         }
 
-        .product:hover {
+        /* Estilos da seção de Pacotes */
+        .packages {
+            background-color: #333; /* Fundo dos pacotes */
+            padding: 20px;
+            margin-top: 20px;
+        }
+
+        .package {
+            border: 1px solid #fff;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 15px;
+            transition: transform 0.3s;
+        }
+
+        .package:hover {
             transform: scale(1.05);
         }
 
-        .product h2 {
-            margin: 10px 0;
-            color: #333;
-        }
-
-        .product p {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .product button {
-            background-color: #2ecc71;
+        .package-button {
+            background-color: #008CBA; /* Cor do botão */
+            color: white;
             border: none;
             border-radius: 5px;
-            color: white;
             padding: 10px 20px;
             cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-            font-size: 1em;
+            transition: background-color 0.3s;
         }
 
-        .product button:hover {
-            background-color: #27ae60;
-            transform: translateY(-2px);
+        .package-button:hover {
+            background-color: #005f73; /* Cor do botão ao passar o mouse */
         }
 
-        .option {
-            display: none;
-            position: absolute;
-            bottom: -40px; /* Colocando abaixo do produto */
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #2980b9; /* Cor da opção */
-            color: white;
-            padding: 10px;
-            border-radius: 5px;
-            transition: opacity 0.3s;
-        }
-
-        footer {
-            background-color: #000;
-            color: #fff;
-            text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-        }
-
-        footer a {
-            color: blue;
-            text-decoration: none;
-        }
-
+        /* Estilos da seção de Perguntas Frequentes */
         .faq {
-            margin: 60px 20px 20px; /* espaço para o cabeçalho fixo */
-            padding: 20px;
+            margin-top: 20px;
         }
 
         .faq h2 {
-            text-align: center;
-            color: #fff;
-        }
-
-        .faq-details {
-            margin: 20px 0;
+            margin-bottom: 10px;
         }
 
         details {
-            margin-bottom: 10px;
-            transition: transform 0.3s; /* animação ao passar o mouse */
-        }
-
-        summary {
+            background: none; /* Remove fundo */
+            margin: 10px 0;
             cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        details:hover {
+            transform: translateY(-2px);
+        }
+
+        details summary {
             font-weight: bold;
+            outline: none;
+        }
+
+        details p {
+            margin-left: 20px;
+            transition: opacity 0.3s;
+        }
+
+        /* Estilos do rodapé */
+        footer {
+            background-color: #111; /* Fundo do rodapé */
             color: #fff;
-            padding: 10px;
-            /* Removido fundo da caixa */
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
         }
-
-        summary:hover {
-            color: #2ecc71; /* cor ao passar o mouse */
-            transform: translateY(-2px); /* leve movimento ao passar o mouse */
-            transition: color 0.3s, transform 0.3s;
-        }
-
-        p {
-            margin: 5px 0;
-            color: #fff;
-            transition: transform 0.3s; /* animação de movimento */
-        }
-
-        details[open] p {
-            transform: translateY(5px); /* leve movimento quando aberto */
+        
+        footer a {
+            color: #008CBA; /* Cor do link */
+            text-decoration: none;
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">oPlano Digital</div>
+        <img src="LOGO-COM-NOME.png" alt="Logo do oPlano Digital" class="logo">
+        <nav>
+            <a href="index.html">Início</a>
+            <a href="form.html">Formulário</a>
+            <a href="chat.html">Chat</a>
+        </nav>
     </header>
 
-    <h1>Bem-vindo ao oPlano Digital</h1>
-    <div class="cta">
+    <!-- Seção de Introdução -->
+    <section id="home">
+        <h1>Bem-vindo ao oPlano Digital</h1>
         <p>Transformamos suas ideias em realidade visual.</p>
-        <p>O planejamento perfeito pro seu negócio.</p>
+        <p>O planejamento perfeito pro seu negócio. 🎯</p>
         <p>Contato: +55 21 99206-9848</p>
-        <p>Instagram: @oplanodigital_</p>
-    </div>
+        <p>Instagram: <a href="https://instagram.com/oplanodigital_" target="_blank">@oplanodigital_</a></p>
+    </section>
 
-    <div class="products">
-        <div class="product" draggable="true" ondragend="showOption(this)">
-            <h2>Bronze</h2>
-            <p>R$ 99,90</p>
-            <button>Saiba Mais</button>
-            <div class="option">Opção Selecionada!</div>
+    <!-- Seção de Pacotes -->
+    <section class="packages">
+        <h2>Pacotes</h2>
+        <div class="package">
+            <h3>Pacote Básico</h3>
+            <p>Inclui design de logotipo e identidade visual.</p>
+            <p>Preço: R$ 300,00</p>
+            <button class="package-button">Escolher</button>
         </div>
-        <div class="product" draggable="true" ondragend="showOption(this)">
-            <h2>Prata</h2>
-            <p>R$ 179,90</p>
-            <button>Saiba Mais</button>
-            <div class="option">Opção Selecionada!</div>
+        <div class="package">
+            <h3>Pacote Intermediário</h3>
+            <p>Inclui design de logotipo, identidade visual e 3 variações.</p>
+            <p>Preço: R$ 600,00</p>
+            <button class="package-button">Escolher</button>
         </div>
-        <div class="product" draggable="true" ondragend="showOption(this)">
-            <h2>Ouro</h2>
-            <p>R$ 289,90</p>
-            <button>Saiba Mais</button>
-            <div class="option">Opção Selecionada!</div>
+        <div class="package">
+            <h3>Pacote Avançado</h3>
+            <p>Inclui design de logotipo, identidade visual e material promocional.</p>
+            <p>Preço: R$ 1.200,00</p>
+            <button class="package-button">Escolher</button>
         </div>
-        <div class="product" draggable="true" ondragend="showOption(this)">
-            <h2>Diamante</h2>
-            <p>R$ 479,90</p>
-            <button>Saiba Mais</button>
-            <div class="option">Opção Selecionada!</div>
-        </div>
-    </div>
+    </section>
 
     <!-- Perguntas Frequentes -->
     <section class="faq">
@@ -238,18 +189,21 @@
     </section>
 
     <footer>
-        <p>© 2024 oPlano Digital. Todos os direitos reservados. Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/">Gaio Moreira</a></p>
+        <p>© 2024 oPlano Digital. Todos os direitos reservados. Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/" target="_blank">Gaio Moreira</a></p>
     </footer>
 
-    <script>
-        function showOption(product) {
-            const option = product.querySelector('.option');
-            option.style.display = 'block';
-            option.style.opacity = '1';
-            setTimeout(() => {
-                option.style.opacity = '0';
-            }, 2000); // esconde a opção após 2 segundos
-        }
+    <!-- Start of Tawk.to Script -->
+    <script type="text/javascript">
+        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+        (function(){
+            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+            s1.async = true;
+            s1.src = 'https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
+            s1.charset = 'UTF-8';
+            s1.setAttribute('crossorigin', '*');
+            s0.parentNode.insertBefore(s1, s0);
+        })();
     </script>
+    <!-- End of Tawk.to Script -->
 </body>
 </html>
