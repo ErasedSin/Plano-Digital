@@ -5,29 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>oPlano Digital - Início</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos para o layout semelhante ao print */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+
+        header {
+            background-color: black;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 150px;
+            height: auto;
+            margin-left: 20px;
+        }
+
+        .menu-toggle {
+            display: none; /* Não vamos precisar do menu */
+        }
+
+        section#home {
+            background-color: #333;
+            color: white;
+            padding: 50px;
+            text-align: center;
+        }
+
+        section#home h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        section#home p {
+            font-size: 1.2em;
+        }
+
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* Estilos para os pacotes */
+        .pacotes {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            background-color: #fff;
+            padding: 50px;
+        }
+
+        .pacote {
+            background-color: #f0f0f0;
+            border-radius: 10px;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .pacote h3 {
+            color: #333;
+        }
+
+        .pacote button {
+            background-color: red;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .pacote button:hover {
+            background-color: darkred;
+        }
+
+        /* Perguntas Frequentes */
+        .faq {
+            padding: 50px;
+            background-color: #f5f5f5;
+        }
+
+        .faq h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .faq-details {
+            width: 60%;
+            margin: 0 auto;
+        }
+
+        .faq-details details {
+            background-color: white;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            padding: 15px;
+        }
+
+        .faq-details summary {
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
     <header>
-    <img src="LOGO-COM-NOME.png" alt="Logo do oPlano Digital" class="logo">
-    <div class="menu-toggle" id="menu-toggle">
-        <div class="bar"></div>
-        <div class="bar"></div>
-        <div class="bar"></div>
-    </div>
-
-        <nav id="nav-menu">
-            <ul>
-                <li><a href="index.html">Início</a></li>
-                <li><a href="form.html">Formulário</a></li>
-                <li><a href="regras.html">Regras de Contato</a></li>
-                <li><a href="chat.html">Chat</a></li>
-                <li><a href="atualizacoes.html">Atualizações</a></li>
-                <li><a href="relatorio.html">Relatório</a></li>
-            </ul>
-        </nav>
+        <img src="LOGO-COM-NOME.png" alt="Logo do oPlano Digital" class="logo">
     </header>
 
-    <!-- Seção de introdução -->
     <section id="home">
         <h1>Bem-vindo ao oPlano Digital</h1>
         <p>Transformamos suas ideias em realidade visual.</p>
@@ -36,22 +135,13 @@
         <p>Instagram: <a href="https://instagram.com/oplanodigital_" target="_blank">@oplanodigital_</a></p>
     </section>
 
-    <footer>
-        <p>© 2024 oPlano Digital. Todos os direitos reservados.</p>
-    </footer>
-</body>
-</html>
-
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->
+    <!-- Pacotes -->
+    <section class="pacotes">
+        <div class="pacote">
+            <h3>Bronze</h3>
+            <p>R$ 99,90</p>
+            <button>Assinar</button>
+        </div>
+        <div class="pacote">
+            <h3>Prata</h3>
+            <p>R$
