@@ -83,30 +83,35 @@
             transform: translateY(-50%); /* Ajusta a posição */
         }
 
-       .faq {
-        padding: 20px;
-        text-align: left;
-        color: #000; /* Cor do texto na seção FAQ */
-    }
+        .content h1 {
+            font-size: 2.5em; /* Aumento leve no tamanho da fonte */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7); /* Contorno nas letras */
+        }
 
-    .faq-details details {
-        margin: 10px 0;
-        background: none; /* Remove fundo */
-        border: none; /* Remove borda */
-        color: #000; /* Cor do texto das respostas */
-    }
+        .faq {
+            padding: 20px;
+            text-align: left;
+            color: #000; /* Cor do texto na seção FAQ */
+        }
 
-    .faq-details summary {
-        cursor: pointer; /* Indica que pode ser clicado */
-        padding: 10px;
-        border: 1px solid transparent; /* Bordas invisíveis */
-        transition: border-color 0.3s, transform 0.3s; /* Animação da borda */
-    }
+        .faq-details details {
+            margin: 10px 0;
+            background: none; /* Remove fundo */
+            border: none; /* Remove borda */
+            color: #000; /* Cor do texto das respostas */
+        }
 
-    .faq-details summary:hover {
-        border-color: #000; /* Borda visível ao passar o mouse */
-        transform: scale(1.05); /* Animação de leve aumento */
-    }
+        .faq-details summary {
+            cursor: pointer; /* Indica que pode ser clicado */
+            padding: 10px;
+            border: 1px solid transparent; /* Bordas invisíveis */
+            transition: border-color 0.3s, transform 0.3s; /* Animação da borda */
+        }
+
+        .faq-details summary:hover {
+            border-color: #000; /* Borda visível ao passar o mouse */
+            transform: scale(1.05); /* Animação de leve aumento */
+        }
 
         footer {
             background: #000; /* Rodapé preto */
@@ -256,18 +261,24 @@
     </section>
 
     <footer>
-        <p>© 2024 oPlano Digital. Todos os direitos reservados. Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/">Gaio Moreira</a></p>
+        <p>Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/" target="_blank">Gaio Moreira</a></p>
     </footer>
 
     <script>
-        const images = document.querySelectorAll('.image-slider img');
-        let current = 0;
+        const slides = document.querySelectorAll('.image-slider img');
+        let currentSlide = 0;
 
-        setInterval(() => {
-            images[current].classList.remove('active');
-            current = (current + 1) % images.length;
-            images[current].classList.add('active');
-        }, 7000); // Troca de imagem a cada 7 segundos
+        function showSlide(index) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (index + slides.length) % slides.length; // Loop de volta
+            slides[currentSlide].classList.add('active');
+        }
+
+        function nextSlide() {
+            showSlide(currentSlide + 1);
+        }
+
+        setInterval(nextSlide, 7000); // Troca a cada 7 segundos
     </script>
 </body>
 </html>
