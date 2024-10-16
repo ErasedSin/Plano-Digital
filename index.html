@@ -6,25 +6,29 @@
     <title>oPlano Digital - Início</title>
     <link rel="stylesheet" href="style.css">
     <style>
-        /* Estilos Gerais */
         body {
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #222; /* Fundo escuro */
+            background-color: #1a1a1a; /* Fundo mais escuro */
             color: #fff;
         }
 
         header {
             display: flex;
-            align-items: center;
             justify-content: space-between;
-            padding: 10px 20px;
-            background-color: #111; /* Fundo do cabeçalho */
+            align-items: center;
+            padding: 10px 20px; /* Cabeçalho pequeno */
+            background-color: #333;
         }
 
         .logo {
-            height: 50px; /* Reduzido */
+            width: 150px;
+            transition: transform 0.3s;
+        }
+
+        .logo:hover {
+            transform: scale(1.1); /* Animação de hover na logo */
         }
 
         nav {
@@ -33,113 +37,80 @@
         }
 
         nav a {
-            color: white;
+            color: #fff;
             text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #008CBA; /* Cor do hover */
-        }
-
-        section {
-            padding: 20px;
-            text-align: center;
-        }
-
-        /* Estilos da seção de Pacotes */
-        .packages {
-            background-color: #333; /* Fundo dos pacotes */
-            padding: 20px;
-            margin-top: 20px;
-            border-radius: 8px;
-        }
-
-        .package {
-            border: 1px solid #fff;
+            padding: 10px 15px;
             border-radius: 5px;
-            padding: 20px;
-            margin: 15px;
-            transition: transform 0.3s;
-            background-color: #444; /* Fundo das caixas de pacotes */
-        }
-
-        .package:hover {
-            transform: scale(1.05);
-        }
-
-        .package h3 {
-            margin: 0 0 10px;
-        }
-
-        .package p {
-            margin: 5px 0;
-        }
-
-        .package-price {
-            font-size: 1.5em;
-            color: #ffcc00; /* Cor do preço */
-            margin: 10px 0;
-        }
-
-        .package-button {
-            background-color: #008CBA; /* Cor do botão */
-            color: white;
-            border: none;
-            border-radius: 5px;
-            padding: 10px 20px;
-            cursor: pointer;
             transition: background-color 0.3s;
         }
 
-        .package-button:hover {
-            background-color: #005f73; /* Cor do botão ao passar o mouse */
+        nav a:hover {
+            background-color: #555; /* Cor de fundo ao passar o mouse */
         }
 
-        /* Estilos da seção de Perguntas Frequentes */
+        #home {
+            text-align: center;
+            padding: 50px 20px;
+            animation: fadeIn 1s ease-in; /* Animação de entrada */
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
         .faq {
-            margin-top: 20px;
+            padding: 20px;
         }
 
-        .faq h2 {
-            margin-bottom: 10px;
-        }
-
-        details {
-            background: none; /* Remove fundo */
-            margin: 10px 0;
+        .faq-details details {
+            background: none; /* Sem fundo nas perguntas */
             cursor: pointer;
-            transition: transform 0.3s;
+            padding: 10px;
+            border-bottom: 1px solid #444;
+            transition: color 0.3s;
         }
 
-        details:hover {
-            transform: translateY(-2px);
+        .faq-details details:hover {
+            color: #ffa500; /* Cor ao passar o mouse */
         }
 
-        details summary {
-            font-weight: bold;
-            outline: none;
-        }
-
-        details p {
-            margin-left: 20px;
-            transition: opacity 0.3s;
-        }
-
-        /* Estilos do rodapé */
         footer {
-            background-color: #111; /* Fundo do rodapé */
-            color: #fff;
             text-align: center;
             padding: 10px 0;
-            position: relative;
+            background-color: #333; /* Rodapé preto */
+            position: relative; /* Mantém o rodapé no final */
             bottom: 0;
             width: 100%;
         }
 
         footer a {
-            color: #008CBA; /* Cor do link */
-            text-decoration: none;
+            color: #00f; /* Link azul */
+        }
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px 0;
+        }
+
+        .product-box {
+            width: calc(33% - 20px);
+            background: #444;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+
+        .product-box:hover {
+            transform: translateY(-5px); /* Animação ao passar o mouse */
+        }
+
+        .price {
+            font-size: 1.2em;
+            color: #ffa500; /* Cor dos preços */
         }
     </style>
 </head>
@@ -149,11 +120,14 @@
         <nav>
             <a href="index.html">Início</a>
             <a href="form.html">Formulário</a>
+            <a href="regras.html">Regras de Contato</a>
             <a href="chat.html">Chat</a>
+            <a href="atualizacoes.html">Atualizações</a>
+            <a href="relatorio.html">Relatório</a>
         </nav>
     </header>
 
-    <!-- Seção de Introdução -->
+    <!-- Seção de introdução -->
     <section id="home">
         <h1>Bem-vindo ao oPlano Digital</h1>
         <p>Transformamos suas ideias em realidade visual.</p>
@@ -162,26 +136,25 @@
         <p>Instagram: <a href="https://instagram.com/oplanodigital_" target="_blank">@oplanodigital_</a></p>
     </section>
 
-    <!-- Seção de Pacotes -->
-    <section class="packages">
-        <h2>Pacotes</h2>
-        <div class="package">
-            <h3>Pacote Básico</h3>
-            <p>Inclui design de logotipo e identidade visual.</p>
-            <p class="package-price">Preço: R$ 300,00</p>
-            <button class="package-button">Escolher</button>
-        </div>
-        <div class="package">
-            <h3>Pacote Intermediário</h3>
-            <p>Inclui design de logotipo, identidade visual e 3 variações.</p>
-            <p class="package-price">Preço: R$ 600,00</p>
-            <button class="package-button">Escolher</button>
-        </div>
-        <div class="package">
-            <h3>Pacote Avançado</h3>
-            <p>Inclui design de logotipo, identidade visual e material promocional.</p>
-            <p class="package-price">Preço: R$ 1.200,00</p>
-            <button class="package-button">Escolher</button>
+    <!-- Produtos -->
+    <section class="products">
+        <h2>Pacotes Disponíveis</h2>
+        <div class="product-container">
+            <div class="product-box">
+                <h3>Pacote Básico</h3>
+                <p class="price">R$ 199,00</p>
+                <p>Inclui logotipo e identidade visual.</p>
+            </div>
+            <div class="product-box">
+                <h3>Pacote Intermediário</h3>
+                <p class="price">R$ 399,00</p>
+                <p>Inclui logotipo, identidade visual e material de marketing.</p>
+            </div>
+            <div class="product-box">
+                <h3>Pacote Avançado</h3>
+                <p class="price">R$ 599,00</p>
+                <p>Inclui tudo do pacote intermediário e suporte contínuo.</p>
+            </div>
         </div>
     </section>
 
@@ -208,18 +181,18 @@
         <p>© 2024 oPlano Digital. Todos os direitos reservados. Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/" target="_blank">Gaio Moreira</a></p>
     </footer>
 
-    <!-- Start of Tawk.to Script -->
+    <!--Start of Tawk.to Script-->
     <script type="text/javascript">
-        var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
-        (function(){
-            var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
-            s1.async = true;
-            s1.src = 'https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
-            s1.charset = 'UTF-8';
-            s1.setAttribute('crossorigin', '*');
-            s0.parentNode.insertBefore(s1, s0);
-        })();
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/66f1f28c4cbc4814f7ddad73/1i8ghmtqc';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+    })();
     </script>
-    <!-- End of Tawk.to Script -->
+    <!--End of Tawk.to Script-->
 </body>
 </html>
