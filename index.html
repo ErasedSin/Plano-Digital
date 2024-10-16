@@ -10,7 +10,7 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
+            background-color: #2c3e50; /* fundo escuro */
             color: #fff;
         }
 
@@ -137,16 +137,21 @@
 
         details {
             margin-bottom: 10px;
+            transition: transform 0.3s; /* animação ao passar o mouse */
         }
 
         summary {
             cursor: pointer;
             font-weight: bold;
             color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.2);
         }
 
         summary:hover {
-            text-decoration: underline;
+            background-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px); /* leve movimento ao passar o mouse */
         }
 
         p {
