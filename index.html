@@ -5,6 +5,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>oPlano Digital - Início</title>
     <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Fundo escuro */
+            color: #ffffff; /* Texto claro */
+        }
+
+        header {
+            background: #000; /* Cabeçalho preto */
+            padding: 10px; /* Cabeçalho pequeno */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            max-height: 50px; /* Altura máxima da logo */
+        }
+
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav a {
+            color: #fff; /* Cor do texto do link */
+            text-decoration: none;
+        }
+
+        section#home {
+            text-align: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden; /* Para as imagens que se movem */
+        }
+
+        .image-slider {
+            position: relative;
+            height: 300px; /* Ajuste conforme necessário */
+        }
+
+        .image-slider img {
+            position: absolute;
+            width: 100%;
+            height: auto;
+            opacity: 0;
+            transition: opacity 1s ease-in-out;
+        }
+
+        .image-slider img.active {
+            opacity: 1;
+        }
+
+        .faq {
+            padding: 20px;
+            text-align: left;
+        }
+
+        .faq-details details {
+            margin: 10px 0;
+            background: none; /* Remove fundo */
+            border: none; /* Remove borda */
+            color: #ffffff; /* Cor do texto */
+        }
+
+        .faq-details summary {
+            cursor: pointer; /* Indica que pode ser clicado */
+            padding: 10px;
+            border: 1px solid transparent; /* Bordas invisíveis */
+            transition: border-color 0.3s; /* Animação da borda */
+        }
+
+        .faq-details summary:hover {
+            border-color: #fff; /* Borda visível ao passar o mouse */
+        }
+
+        footer {
+            background: #000; /* Rodapé preto */
+            text-align: center;
+            padding: 10px;
+            position: relative; /* Para manter o rodapé na parte inferior */
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer a {
+            color: blue; /* Cor do link no rodapé */
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -20,7 +118,7 @@
     <section id="home">
         <h1>Bem-vindo ao oPlano Digital</h1>
         <div class="image-slider">
-            <img src="1.jpg" alt="Imagem 1">
+            <img src="1.jpg" alt="Imagem 1" class="active">
             <img src="2.jpg" alt="Imagem 2">
             <img src="3.jpg" alt="Imagem 3">
         </div>
@@ -50,26 +148,8 @@
     </section>
 
     <footer>
-        <p>© 2024 oPlano Digital. Todos os direitos reservados. Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/" style="color:blue;">Gaio Moreira</a></p>
+        <p>© 2024 oPlano Digital. Todos os direitos reservados. Desenvolvido por <a href="https://www.instagram.com/igaiomoreirai/">Gaio Moreira</a></p>
     </footer>
-
-    <style>
-        .image-slider {
-            position: relative;
-            overflow: hidden;
-            height: 300px; /* Ajuste conforme necessário */
-        }
-        .image-slider img {
-            position: absolute;
-            width: 100%;
-            height: auto;
-            opacity: 0;
-            transition: opacity 1s ease-in-out;
-        }
-        .image-slider img.active {
-            opacity: 1;
-        }
-    </style>
 
     <script>
         const images = document.querySelectorAll('.image-slider img');
@@ -82,7 +162,6 @@
         }
 
         setInterval(showNextImage, 7000); // Troca a imagem a cada 7 segundos
-        images[0].classList.add('active'); // Mostra a primeira imagem inicialmente
     </script>
 </body>
 </html>
