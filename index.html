@@ -47,17 +47,23 @@
             padding: 20px;
             position: relative;
             overflow: hidden; /* Para as imagens que se movem */
+            height: 500px; /* Altura do slider */
         }
 
         .image-slider {
-            position: relative;
-            height: 300px; /* Ajuste conforme necessário */
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0;
+            left: 0;
         }
 
         .image-slider img {
             position: absolute;
             width: 100%;
-            height: auto;
+            height: 100%;
+            object-fit: cover; /* Para cobrir toda a área */
             opacity: 0;
             transition: opacity 1s ease-in-out;
             top: 0;
@@ -66,6 +72,11 @@
 
         .image-slider img.active {
             opacity: 1;
+        }
+
+        .content {
+            position: relative;
+            z-index: 1; /* Garante que o texto esteja acima das imagens */
         }
 
         .faq {
@@ -84,11 +95,12 @@
             cursor: pointer; /* Indica que pode ser clicado */
             padding: 10px;
             border: 1px solid transparent; /* Bordas invisíveis */
-            transition: border-color 0.3s; /* Animação da borda */
+            transition: border-color 0.3s, transform 0.3s; /* Animação da borda */
         }
 
         .faq-details summary:hover {
             border-color: #fff; /* Borda visível ao passar o mouse */
+            transform: scale(1.05); /* Animação de leve aumento */
         }
 
         footer {
@@ -104,6 +116,36 @@
             color: blue; /* Cor do link no rodapé */
             text-decoration: none;
         }
+
+        /* Estilos para os produtos */
+        .products {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .product {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+            padding: 20px;
+            margin: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            width: calc(30% - 40px); /* Largura das caixas de produto */
+        }
+
+        .product:hover {
+            transform: scale(1.05); /* Aumento ao passar o mouse */
+        }
+
+        .product h3 {
+            margin: 10px 0;
+        }
+
+        .product p {
+            margin: 5px 0;
+        }
     </style>
 </head>
 <body>
@@ -118,16 +160,37 @@
 
     <!-- Seção de introdução -->
     <section id="home">
-        <h1>Bem-vindo ao oPlano Digital</h1>
         <div class="image-slider">
             <img src="1.jpg" alt="Imagem 1" class="active">
             <img src="2.jpg" alt="Imagem 2">
             <img src="3.jpg" alt="Imagem 3">
         </div>
-        <p>Transformamos suas ideias em realidade visual.</p>
-        <p>O planejamento perfeito pro seu negócio. 🎯</p>
-        <p>Contato: +55 21 99206-9848</p>
-        <p>Instagram: <a href="https://instagram.com/oplanodigital_" target="_blank">@oplanodigital_</a></p>
+        <div class="content">
+            <h1>Bem-vindo ao oPlano Digital</h1>
+            <p>Transformamos suas ideias em realidade visual.</p>
+            <p>O planejamento perfeito pro seu negócio. 🎯</p>
+            <p>Contato: +55 21 99206-9848</p>
+            <p>Instagram: <a href="https://instagram.com/oplanodigital_" target="_blank">@oplanodigital_</a></p>
+        </div>
+    </section>
+
+    <!-- Produtos -->
+    <section class="products">
+        <div class="product">
+            <h3>Logotipo</h3>
+            <p>Preço: R$ 150,00</p>
+            <p>Inclui: 3 opções, 2 revisões.</p>
+        </div>
+        <div class="product">
+            <h3>Cartão de Visitas</h3>
+            <p>Preço: R$ 50,00</p>
+            <p>Inclui: Design frente e verso.</p>
+        </div>
+        <div class="product">
+            <h3>Site Completo</h3>
+            <p>Preço: R$ 1.000,00</p>
+            <p>Inclui: 5 páginas, responsivo.</p>
+        </div>
     </section>
 
     <!-- Perguntas Frequentes -->
